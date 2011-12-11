@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Acount:
+  = @account.acount
+%p
+  %b User:
+  = @account.user_id
+%p
+  %b Game:
+  = @account.game_id
+
+= link_to 'Edit', edit_account_path(@account)
+\|
+= link_to 'Back', accounts_path

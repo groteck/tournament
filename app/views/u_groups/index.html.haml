@@ -1,0 +1,19 @@
+%h1 Listing u_groups
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @u_groups.each do |u_group|
+    %tr
+      %td= u_group.name
+      %td= link_to 'Show', u_group
+      %td= link_to 'Edit', edit_u_group_path(u_group)
+      %td= link_to 'Destroy', u_group, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New U group', new_u_group_path

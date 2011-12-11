@@ -10,7 +10,9 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :game_id
-    = f.number_field :game_id
+    = f.label 'Game'
+    = select("tournament", "game_id", 
+        Game.all.collect {|p| [ p.name, p.id ] },
+        {:include_blank => 'Select type'})
   .actions
     = f.submit 'Save'

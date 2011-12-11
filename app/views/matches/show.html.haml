@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Tournament:
+  = @match.tournament_id
+
+= link_to 'Edit', edit_match_path(@match)
+\|
+= link_to 'Back', matches_path
