@@ -1,4 +1,6 @@
 Tournaments::Application.routes.draw do
+  devise_for :users
+
   resources :u_groups
 
   resources :accounts

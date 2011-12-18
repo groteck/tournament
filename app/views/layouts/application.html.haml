@@ -1,0 +1,55 @@
+
+%html
+  %head 
+    %title Tournaments
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body 
+    %p.notice 
+      = notice 
+    %p.alert 
+      = alert 
+    #user
+      -if user_signed_in?
+        =link_to "Log_out", destroy_user_session_path, :method => :delete
+        =link_to "Edit registration", edit_user_registration_path
+      -else
+        %h2
+          %a.change(href="#") Sign_in                    
+          %a.hidden.change(href="#") Sign_up                    
+        .change
+          = form_for('user', :url => user_session_path) do |f|
+            %div
+              = f.label :email
+              %br/
+              = f.email_field :email
+            %div
+              = f.label :password
+              %br/
+              = f.password_field :password
+            %div= f.submit "Sign in"
+        .hidden.change
+          = form_for('user', :url => user_registration_path) do |f|
+            %div
+              = f.label :username
+              %br/
+              = f.email_field :username
+            %div
+              = f.label :email
+              %br/
+              = f.email_field :email
+            %div
+              = f.label :password
+              %br/
+              = f.password_field :password
+            %div
+              = f.label :password_confirmation
+              %br/
+              = f.password_field :password_confirmation
+            %div= f.submit "Sign up"
+
+    #content
+      = yield 
+

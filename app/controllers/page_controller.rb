@@ -7,13 +7,4 @@ class PageController < ApplicationController
       format.json { render json: @tournaments }
     end
   end
-
-  def tree
-  def
-
-  def show
-  end
-
-  def rules
-  end
 end

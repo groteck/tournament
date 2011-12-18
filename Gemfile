@@ -23,7 +23,8 @@ group :test do
   gem 'turn', '0.8.2', :require => false
 end
 ### gemas que me haran falta
-
+# rails 3 generators
+gem 'rails3-generators'
 # users authentication
 gem 'devise'
 # haml generators
