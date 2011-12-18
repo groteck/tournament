@@ -8,7 +8,7 @@
 //= require jquery_ujs
 //= require_tree .
 $(document).ready(function(){
-	$(".change").click(function () {
+	$("a.change").click(function () {
 		$(".change").toggle();
 		return false;
 	});
